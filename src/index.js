@@ -119,11 +119,11 @@ const App = () => {
         </button>
       )}
       <video
-        style={{ position: "absolute", top: 0, left: 0 }}
+        style={{ position: "absolute", top: 70, left: 10 }}
         ref={videoRef}
       />
       <canvas
-        style={{ position: "absolute", top: 0, left: 0 }}
+        style={{ position: "absolute", top: 70, left: 10 }}
         ref={canvasRef}
       />
       {loading && (
