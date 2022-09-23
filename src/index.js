@@ -83,10 +83,10 @@ const App = () => {
           audio: false,
           video: {
             mandatory: {
-              minWidth: 516,
-              maxWidth: 516,
-              minHeight: 516,
-              maxHeight: 516,
+              minWidth: 412,
+              maxWidth: 412,
+              minHeight: 412,
+              maxHeight: 412,
               minFrameRate: 1,
               maxFrameRate: 10
             }
@@ -119,21 +119,21 @@ const App = () => {
         </button>
       )}
       <video
-        style={{ position: "absolute", top: 70, left: 10 }}
+        style={{ position: "absolute", top: 0, left: 0 }}
         ref={videoRef}
       />
       <canvas
-        style={{ position: "absolute", top: 70, left: 10 }}
+        style={{ position: "absolute", top: 0, left: 0 }}
         ref={canvasRef}
       />
       {loading && (
         <div
           style={{
             position: "absolute",
-            top: 70,
-            left: 10,
-            width: 320,
-            height: 240,
+            top: 0,
+            left: 0,
+            width: 412,
+            height: 412,
             background: "rgba(0,0,0,0.5)",
             zIndex: 1,
             color: "#fff",
