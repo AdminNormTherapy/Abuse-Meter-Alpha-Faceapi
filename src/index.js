@@ -130,10 +130,10 @@ const App = () => {
         <div
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: 412,
-            height: 412,
+            top: 70,
+            left: 10,
+            width: 320,
+            height: 240,
             background: "rgba(0,0,0,0.5)",
             zIndex: 1,
             color: "#fff",
