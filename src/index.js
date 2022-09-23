@@ -83,10 +83,10 @@ const App = () => {
           audio: false,
           video: {
             mandatory: {
-              minWidth: 320,
-              maxWidth: 320,
-              minHeight: 240,
-              maxHeight: 240,
+              minWidth: 516,
+              maxWidth: 516,
+              minHeight: 516,
+              maxHeight: 516,
               minFrameRate: 1,
               maxFrameRate: 10
             }
