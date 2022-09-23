@@ -145,7 +145,7 @@ const App = () => {
           Loading
         </div>
       )}
-      {camera && <h2>Face Detected : {detected ? "True" : "False"}</h2>}
+      {camera}
     </div>
   );
 };
