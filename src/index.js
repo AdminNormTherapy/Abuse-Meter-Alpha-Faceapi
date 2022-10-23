@@ -59,7 +59,7 @@ const App = () => {
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           let jsonString = JSON.stringify(resizedResults);
-				  localStorage.setItem('faceapi_net.json', jsonString);
+	  localStorage.setItem('faceapi_net.json', jsonString);
           console.log(resizedResults);
           if (true) {
             draw.drawDetections(canvas, resizedResults);
