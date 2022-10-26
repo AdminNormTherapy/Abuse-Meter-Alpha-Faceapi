@@ -1,0 +1,14 @@
+{
+  "resourceName": "faceapinosql",
+  "tableName": "faceapifacevectors",
+  "partitionKey": {
+    "fieldName": "datetime",
+    "fieldType": "number"
+  },
+  "sortKey": {
+    "fieldName": "user",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
