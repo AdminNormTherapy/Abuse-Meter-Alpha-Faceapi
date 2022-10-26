@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "aws-amplify": "^4.3.41",
     "face-api.js": "0.22.1",
     "react": "17.0.0",
     "react-dom": "17.0.0",
