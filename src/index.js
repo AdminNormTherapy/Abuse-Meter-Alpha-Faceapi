@@ -13,7 +13,7 @@ import {
 import "./styles.css";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
 
-import awsconfig from "./aws-exports";
+import awsconfig from "./aws-exports.js";
 import { createTodo } from "./graphql/mutations";
 
 Amplify.configure(awsconfig);
@@ -74,8 +74,6 @@ const App = () => {
           setDetected(true);
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
-          let jsonString = JSON.stringify(resizedResults);
-	  localStorage.setItem('faceapi_net.json', jsonString);
           console.log(resizedResults);
 		  createNewTodo(resizedResults);
           if (true) {
