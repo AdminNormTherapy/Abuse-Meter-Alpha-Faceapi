@@ -1,5 +1,0 @@
-type Todo @model @auth(rules: [{ allow: owner }]) {
-  datetime: Int!
-  datastring: String!
-  user: String
-}

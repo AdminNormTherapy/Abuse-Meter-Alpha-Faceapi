@@ -77,7 +77,7 @@ const App = () => {
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
-		  createNewTodo(resizedResults);
+		  createNewTodo(resizedResults).then();
           if (true) {
             draw.drawDetections(canvas, resizedResults);
           }
