@@ -19,8 +19,9 @@ import { createTodo } from "./graphql/mutations";
 Amplify.configure(awsconfig);
 
 async function createNewTodo(e) {
+  let ms = Date.now();
   const todo = {
-    datetime: `(${new Date().time()})`,
+    datetime: `(${ms})`,
     datastring: JSON.stringify(e),
 	user: "visitor",
   };

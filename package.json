@@ -8,6 +8,7 @@
     "aws-amplify": "^4.3.41",
     "face-api.js": "0.22.1",
     "react": "17.0.0",
+    "react-datetime": "^3.2.0",
     "react-dom": "17.0.0",
     "react-s3-uploader": "^5.0.0",
     "react-scripts": "3.4.3"
