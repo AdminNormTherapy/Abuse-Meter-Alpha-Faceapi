@@ -16,12 +16,13 @@ import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsconfig from "./aws-exports";
 import { createTodo } from "./graphql/mutations";
 
+
 Amplify.configure(awsconfig);
 
 async function createNewTodo(e) {
   let ms = Date.now();
   const todo = {
-    datetime: `(${ms})`,
+    datetime: 1,
     datastring: JSON.stringify(e),
 	user: "visitor",
   };
