@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-faceapi-dev-13324-authRole",
+      "UnauthRoleArn": "arn:aws:iam::619464233190:role/amplify-faceapi-dev-13324-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::619464233190:role/amplify-faceapi-dev-13324-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-faceapi-dev-13324-deployment",
+      "UnauthRoleName": "amplify-faceapi-dev-13324-unauthRole",
+      "StackName": "amplify-faceapi-dev-13324",
+      "StackId": "arn:aws:cloudformation:us-east-1:619464233190:stack/amplify-faceapi-dev-13324/60664a20-5814-11ed-8701-0a0450a52555",
+      "AmplifyAppId": "d26uzw0epz0qqs"
+    },
+    "categories": {
+      "function": {
+        "facerestapilambda": {
+          "deploymentBucketName": "amplify-faceapi-dev-13324-deployment",
+          "s3Key": "amplify-builds/facerestapilambda-446973452f414a656d46-build.zip"
+        },
+        "fridaydynamodbspectroTrigger46b8d3f2": {
+          "deploymentBucketName": "amplify-faceapi-dev-13324-deployment",
+          "s3Key": "amplify-builds/fridaydynamodbspectroTrigger46b8d3f2-684d6b44714d39582b49-build.zip"
+        }
+      },
+      "storage": {
+        "fridaydynamodbspectro": {}
+      },
+      "api": {
+        "spectrorestapi": {}
+      }
+    }
+  }
+}
