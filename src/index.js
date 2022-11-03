@@ -62,7 +62,7 @@ const App = () => {
           console.log(resizedResults);
 		  
 		  const addPosts = async () => {
-			 await fetch('https://lmh52lzc9a.execute-api.us-east-1.amazonaws.com/dev/vectors', {
+			 await fetch('https://lmh52lzc9a.execute-api.us-east-1.amazonaws.com/dev/vectors/', {
 				method: 'POST',
 				body: JSON.stringify({
 				   user_id: "demo",
