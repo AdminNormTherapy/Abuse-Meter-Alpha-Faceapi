@@ -61,7 +61,7 @@ const App = () => {
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
 		  
-	  const inputData = {
+	  let inputData = {
             userid: 'demo-face',
 	    datetime: new Date().toISOString(),
 	    datastring: JSON.stringify(resizedResults),
