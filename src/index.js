@@ -11,24 +11,23 @@ import {
 } from "face-api.js";
 
 import "./styles.css";
-import { Amplify, API } from 'aws-amplify';
-import awsconfig from './aws-exports';
+import { Amplify, API, graphqlOperation } from "aws-amplify";
+
+import awsconfig from "./aws-exports";
+import { createTodo } from "./graphql/mutations";
+
 
 Amplify.configure(awsconfig);
 
-async function postData(e) {
-  const apiName = 'spectrorestapi';
-  const path = '/spectra';
-  const serial = new Date().now();
-  const myInit = {
-    body: {
-		Datetime: serial;
-		Datastring: JSON.stringify(e);
-	},
-    headers: {} // OPTIONAL
+async function createNewTodo(e) {
+  let ms = Date.now();
+  const todo = {
+    datetime: 1,
+    datastring: JSON.stringify(e),
+	user: "visitor",
   };
 
-  return await API.post(apiName, path, myInit);
+  return await API.graphql(graphqlOperation(createTodo, { input: todo }));
 }
 
 const App = () => {
@@ -78,7 +77,7 @@ const App = () => {
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
-		  postData();
+		  createNewTodo(resizedResults).then();
           if (true) {
             draw.drawDetections(canvas, resizedResults);
           }
