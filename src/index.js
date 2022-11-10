@@ -11,6 +11,25 @@ import {
 } from "face-api.js";
 
 import "./styles.css";
+import { Amplify, API } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+
+async function postData(e) {
+  const apiName = 'spectrorestapi';
+  const path = '/spectra';
+  const serial = new Date().now();
+  const myInit = {
+    body: {
+		Datetime: serial;
+		Datastring: JSON.stringify(e);
+	},
+    headers: {} // OPTIONAL
+  };
+
+  return await API.post(apiName, path, myInit);
+}
 
 const App = () => {
   const [video, setVideo] = useState(null);
@@ -18,10 +37,9 @@ const App = () => {
   const [detected, setDetected] = useState(false);
   const [camera, setCamera] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [posts, setPosts] = useState([]);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  
+
   useEffect(() => {
     setVideo(videoRef.current);
     setCanvas(canvasRef.current);
@@ -60,30 +78,7 @@ const App = () => {
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
-		  
-		  const addPosts = async () => {
-			 await fetch('https://lmh52lzc9a.execute-api.us-east-1.amazonaws.com/dev/vectors', {
-				method: 'POST',
-				body: JSON.stringify({
-				   user_id: "demo",
-				   datetime: new Date().toISOString(),
-				   datastring: JSON.stringify(resizedResults),
-				}),
-				headers: {
-				   'Content-type': 'application/json; charset=UTF-8',
-				},
-			 })
-				.then((response) => response.json())
-				.then((data) => {
-				   setPosts((posts) => [data, ...posts]);
-				})
-				.catch((err) => {
-				   console.log(err.message);
-				});
-		  };
-		  
-		  addPosts();
-		  
+		  postData();
           if (true) {
             draw.drawDetections(canvas, resizedResults);
           }
