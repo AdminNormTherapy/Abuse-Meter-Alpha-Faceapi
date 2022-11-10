@@ -11,22 +11,6 @@ import {
 } from "face-api.js";
 
 import "./styles.css";
-import { Amplify, API, graphqlOperation } from "aws-amplify";
-
-import awsconfig from "./aws-exports";
-import { createTodo } from "./graphql/mutations";
-
-Amplify.configure(awsconfig);
-
-async function createNewTodo(e) {
-  const todo = {
-    datetime: `(${new Date().time()})`,
-    datastring: JSON.stringify(e),
-	user: "visitor",
-  };
-
-  return await API.graphql(graphqlOperation(createTodo, { input: todo }));
-}
 
 const App = () => {
   const [video, setVideo] = useState(null);
@@ -75,7 +59,6 @@ const App = () => {
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
-		  createNewTodo(resizedResults);
           if (true) {
             draw.drawDetections(canvas, resizedResults);
           }
