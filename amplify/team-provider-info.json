@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-faceapidata-dev-83822-authRole",
+      "UnauthRoleArn": "arn:aws:iam::619464233190:role/amplify-faceapidata-dev-83822-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::619464233190:role/amplify-faceapidata-dev-83822-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-faceapidata-dev-83822-deployment",
+      "UnauthRoleName": "amplify-faceapidata-dev-83822-unauthRole",
+      "StackName": "amplify-faceapidata-dev-83822",
+      "StackId": "arn:aws:cloudformation:us-east-1:619464233190:stack/amplify-faceapidata-dev-83822/14daed40-552b-11ed-a414-0e3c56f01e67",
+      "AmplifyAppId": "d3ozc76kp1l2c6"
+    },
+    "categories": {
+      "auth": {
+        "faceapidataf46b0650": {}
+      },
+      "storage": {
+        "faceapinosql": {}
+      },
+      "api": {
+        "faceapidata": {}
+      }
+    }
+  }
+}
