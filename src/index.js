@@ -61,16 +61,16 @@ const App = () => {
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
 		  
-	 // let inputData = {
-         //   userid: 'demo-face',
-	 //   datetime: new Date().toISOString(),
-	 //   datastring: JSON.stringify(resizedResults),
-         // };
-         // axios.post(`https://54.227.44.180:8000/api/todos`, { inputData })
-         //     .then(res => {
-         //       console.log(res);
-         //       console.log(res.data);
-         //     })
+	  let inputData = {
+            userid: 'demo-face',
+	    datetime: new Date().toISOString(),
+	    datastring: JSON.stringify(resizedResults),
+          };
+          axios.post(`https://54.227.44.180:8000/api/todos`, { inputData })
+              .then(res => {
+                console.log(res);
+                console.log(res.data);
+              })
 		  
           if (true) {
             draw.drawDetections(canvas, resizedResults);
