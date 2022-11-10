@@ -11,7 +11,6 @@ import {
 } from "face-api.js";
 
 import "./styles.css";
-import axios from 'axios';
 
 const App = () => {
   const [video, setVideo] = useState(null);
@@ -61,17 +60,30 @@ const App = () => {
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           console.log(resizedResults);
-	  const inputData = {
-            userid: 'demo-face',
-	    datetime: new Date().toISOString(),
-	    datastring: JSON.stringify(resizedResults),
-          };
-          axios.post(`https://54.227.44.180:8000/api/todos`, { inputData })
-            .then(res => {
-              console.log(res);
-              console.log(res.data);
-            })
-	  
+		  
+		  const addPosts = async () => {
+			 await fetch('https://lmh52lzc9a.execute-api.us-east-1.amazonaws.com/dev/vectors/', {
+				method: 'POST',
+				body: JSON.stringify({
+				   user_id: "demo",
+				   datetime: new Date().toISOString(),
+				   datastring: JSON.stringify(resizedResults),
+				}),
+				headers: {
+				   'Content-type': 'application/json; charset=UTF-8',
+				},
+			 })
+				.then((response) => response.json())
+				.then((data) => {
+				   setPosts((posts) => [data, ...posts]);
+				})
+				.catch((err) => {
+				   console.log(err.message);
+				});
+		  };
+		  
+		  addPosts();
+		  
           if (true) {
             draw.drawDetections(canvas, resizedResults);
           }
