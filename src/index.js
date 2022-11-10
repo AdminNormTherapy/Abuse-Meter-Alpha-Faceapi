@@ -11,7 +11,7 @@ import {
 } from "face-api.js";
 
 import "./styles.css";
-import axios from 'axios';
+import axios from axios;
 
 const App = () => {
   const [video, setVideo] = useState(null);
